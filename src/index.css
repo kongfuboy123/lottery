@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App {
+  margin: 0 auto;
+  text-align: center;
+}
+.lottery {
+  margin: 0 auto;
+  text-align: center;
+}
+.lottery ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  
+
+}
+.lottery ul li{
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: red;
+  border-radius: 50%;
+  color:rgb(250, 250, 245);
+  line-height:80px;
+  font-size: 80px;
+  text-align:center;
+}
