@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 const Lottery = () => {
  
-  const [pool,setPool]=useState({'red':[],'blue':'發'})
+  const [pool,setPool]=useState([])
 
   const randomNumber = (min, max) =>{
     const range = max - min + 1;
@@ -12,25 +12,23 @@ const Lottery = () => {
   }
   const generator = (n)=>{
     const arr = [];
-    while(arr.length<n){ 
+    while(arr.length<n){
       const num = randomNumber(1,45)
       if (arr.indexOf(num)===-1){
         arr.push(num)
       }
     }
-    const blue = randomNumber(1,16)
-    return {red:arr,blue};
+    return arr;
   }
   
   return (
     <div>
       <button onClick={()=>setPool(generator(6))}>一键开奖</button>
-      <button onClick={()=>setPool({'red':[],'blue':'發'})}>清空奖池</button>
+      <button onClick={()=>setPool([])}>清空奖池</button>
      
       <div className="lottery">
         <ul>
-          {pool.red.map((num,i)=>(<li key={i}><div className="red">{num}</div></li>))}
-          <li><div className="blue" >{pool.blue}</div></li>
+          {pool.map((num,i)=>(<li key={i}><div>{num}</div></li>))}
         </ul>
       </div>
     </div>
